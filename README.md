@@ -2,8 +2,7 @@
 
 This is a simple ASCII implementation of the QR code generation.
 
-> [!NOTE]
-> ## Requirements
+## Requirements
 * G++ (Or a compatible variant)
 * Make (Needed for running the makefile
 * libqrencode (Or qrencode libraries (headers) need to be installed)

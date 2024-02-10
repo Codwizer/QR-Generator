@@ -7,7 +7,7 @@
 // QRCode Generations
 // Author: CodWiz
 // I did it for GitHub
-// LicensL: MIT
+// License: MIT
 
 int margin = 2;
 
@@ -20,14 +20,19 @@ std::string makeASCII_margin(int realwidth, int invert)
 
   std::string output;
   std::string oneline;
+
   for(y = 0; y < realwidth; y++) {
     oneline += (invert?"\u2588":" ");
   }
+
   oneline += "\n";
+
   for(y = 0; y < h; y++) {
     output += oneline;
   }
+
   return output;
+
 }
 
 // Draw QR Code
@@ -36,6 +41,7 @@ std::string makeASCII(const QRcode *qrcode, int invert) {
   unsigned char *row;
   std::string black = "\u2588";
   std::string white = " ";
+
   int y, x;
 
   if (invert) {
@@ -90,10 +96,12 @@ int main() {
 
   qrcode = QRcode_encodeString(stringData, 1, QR_ECLEVEL_M, QR_MODE_8, 0);
   qrcode->width = 21;
+
   std::cout << "QR Size:" << qrcode->width << std::endl;
 
   if (qrcode == NULL) {
     std::cout << "qrcode generation failed" << std::endl;
+
     if(errno == ERANGE) {
       fprintf(stderr, "Failed to encode the input data: Input data too large\n");
     } else {

@@ -7,7 +7,7 @@
 // QRCode Generations
 // Author: CodWiz
 // I did it for GitHub
-// LicensL: MIT
+// License: MIT
 
 int margin = 2;
 
@@ -78,12 +78,19 @@ std::string makeASCII(const QRcode *qrcode, int invert) {
 }
 
 int main() {
-  std::cout << "--QR Code Generation--" << std::endl;
+  std::cout << R"( _____ ______                   _       
+|  _  || ___ \                 | |      
+| | | || |_/ /  ___   ___    __| |  ___ 
+| | | ||    /  / __| / _ \  / _` | / _ \
+\ \/' /| |\ \ | (__ | (_) || (_| ||  __/
+ \_/\_\\_| \_| \___| \___/  \__,_| \___|
+  )";
+  std::cout << "--Generator--\n\n";
 
   QRcode *qrcode;
 
   std::string input;
-  std::cout << "Enter the values for the qr code: ";
+  std::cout << "Enter the text for the qr code: ";
   std::getline(std::cin, input);
 
   const char* stringData = input.c_str();
